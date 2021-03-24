@@ -1,10 +1,11 @@
 import Layout from "./components/Layout/Layout";
 import "./App.css"
+import SaladBuilder from "./components/SaladBuilder/SaladBuilder";
 function App() {
   return (
     <div className="App">
       <Layout>
-        Awesome builder by Kunduz Imanalieva
+        <SaladBuilder/>
         </Layout>
         
      
