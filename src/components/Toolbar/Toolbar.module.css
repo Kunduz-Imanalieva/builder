@@ -1,13 +1,12 @@
-.Toolbar{
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
+.Toolbar {
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  left: 0;
   
-    color: white;
-    background-color: red;
-    box-shadow: 0 0 10px rgba(0, 0 , .5);
-  
-    position: sticky;
-    top:0;
-    left: 0;
+  font-size: 2rem;
+  color: white;
+  background-color:#caff9b;
+  box-shadow: 0 0 10px rgba(0, 0 , .5);
   }
