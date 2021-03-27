@@ -1,0 +1,24 @@
+.SaladControl {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.SaladControl button {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 100%;
+    border: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.SaladControl button:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.SaladControl button:focus {
+    outline: none;
+}
