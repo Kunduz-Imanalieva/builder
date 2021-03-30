@@ -5,9 +5,9 @@ import SaladPreview from "./SaladPreview/SaladPreview";
 
 const SaladBuilder = () => {
     const [ingredients, setIngredients ]= useState({
-        tomato: 1,
-        avocado: 1,
         cucumber: 1,
+        lettuce: 1,
+        spinach: 1,
     });
 
 
