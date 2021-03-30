@@ -6,12 +6,16 @@ const SaladPreview = ({ingredients}) => {
 
     for (const ingredient in ingredients) {
        for (let i = 0; i < ingredients[ingredient]; i++) {
-           result.push(<SaladIngredient type={ingredient}/>);
+           result.push(<SaladIngredient key={ingredient + i} type={ingredient}/>)
        }
     }
     return ( <div className={classes.SaladPreview}>
+      <div 
+      className={classes.ingredients}>
       {result}
-    </div> );
+      </div>
+    </div> 
+    );
 }
  
 export default SaladPreview;
