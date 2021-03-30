@@ -1,8 +1,7 @@
 .SaladControls{
     flex: 0 0 250px;
     border-radius: 1rem;
-    background-color: #efffde;
-    color: white;
+    background-color: #caff9b;
     padding: 1rem;
-
+    text-align: center;
 }
