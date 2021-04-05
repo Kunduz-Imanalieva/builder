@@ -16,8 +16,8 @@ const SaladBuilder = () => {
           }); 
       });
 
-      
 
+      
     function addIngredient(type) {
         const newIngredients = { ...ingredients};
         newIngredients[type]++;
@@ -26,9 +26,11 @@ const SaladBuilder = () => {
 
 
     function removeIngredient(type) {
+        if (ingredients[type]) {
         const newIngredients = { ...ingredients};
         newIngredients[type]--;
         setIngredients(newIngredients)
+        }
     }
 
     return ( <div className={classes.SaladBuilder}>
