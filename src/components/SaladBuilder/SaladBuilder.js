@@ -1,15 +1,22 @@
-import { useState } from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import classes from "./SaladBuilder.module.css";
 import SaladControls from "./SaladControls/SaladControls";
 import SaladPreview from "./SaladPreview/SaladPreview";
 
 const SaladBuilder = () => {
     const [ingredients, setIngredients ]= useState({
-        cucumber: 1,
-        lettuce: 1,
-        spinach: 1,
+    
     });
 
+    useEffect(() => {
+        axios.get (`https://builder-e08b0-default-rtdb.firebaseio.com/ingredients.json`)
+            .then((response) => {
+            setIngredients({ ...response.data });
+          }); 
+      });
+
+      
 
     function addIngredient(type) {
         const newIngredients = { ...ingredients};
