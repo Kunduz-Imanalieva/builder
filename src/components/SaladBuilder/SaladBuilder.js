@@ -5,9 +5,14 @@ import SaladControls from "./SaladControls/SaladControls";
 import SaladPreview from "./SaladPreview/SaladPreview";
 
 const SaladBuilder = () => {
-    const [ingredients, setIngredients ]= useState({
-    
-    });
+    const prices = {
+        cuccumber: 5,
+        lettuce: 4,
+        spinach: .5,
+      };
+    const [ingredients, setIngredients ]= useState({});
+
+    const [price, setPrice] = useState(10);
 
     useEffect(() => {
         axios.get (`https://builder-e08b0-default-rtdb.firebaseio.com/ingredients.json`)
@@ -17,10 +22,11 @@ const SaladBuilder = () => {
       });
 
 
-      
+
     function addIngredient(type) {
         const newIngredients = { ...ingredients};
         newIngredients[type]++;
+        setPrice(price + prices[type]);
         setIngredients(newIngredients)
     }
 
@@ -29,12 +35,13 @@ const SaladBuilder = () => {
         if (ingredients[type]) {
         const newIngredients = { ...ingredients};
         newIngredients[type]--;
+        setPrice(price - prices[type]);
         setIngredients(newIngredients)
         }
     }
 
     return ( <div className={classes.SaladBuilder}>
-        <SaladPreview ingredients={ingredients}/>
+        <SaladPreview price={price} ingredients={ingredients}/>
         <SaladControls ingredients={ingredients}
         addIngredient={addIngredient}
          removeIngredient={removeIngredient}/>
