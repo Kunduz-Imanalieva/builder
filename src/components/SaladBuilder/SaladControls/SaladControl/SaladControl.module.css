@@ -5,6 +5,11 @@
     margin-bottom: 1rem;
 }
 
+.SaladControl .ingredient div {
+    position: static;
+    margin: 0 .5rem;
+  }
+
 .SaladControl button {
     width: 2rem;
     height: 2rem;
