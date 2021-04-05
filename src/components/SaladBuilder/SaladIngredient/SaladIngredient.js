@@ -47,4 +47,4 @@ const SaladIngredient = ({type, fixed}) => {
     );
 }
  
-export default SaladIngredient;
+export default React.memo(SaladIngredient);
