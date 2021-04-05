@@ -1,7 +1,18 @@
 .SaladPreview {
     flex: 0 0 400px;
     height: 400px;
-    width: 250px;
-    margin-bottom: 1rem;
     margin-right: 1rem;
-}
+    margin-bottom: 1rem;
+    border-radius: 100%;
+    background-color: #caff9b;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .ingredients {
+    width: 380px;
+    height: 380px;
+    border-radius: 100%;
+    position: relative;
+  }
