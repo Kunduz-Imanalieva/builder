@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import classes from "./SaladBuilder.module.css";
 import SaladControls from "./SaladControls/SaladControls";
 import SaladPreview from "./SaladPreview/SaladPreview";
+import Modal from "../UI/Modal/Modal";
 
 const SaladBuilder = () => {
     const prices = {
@@ -47,7 +48,7 @@ const SaladBuilder = () => {
         <SaladControls ingredients={ingredients}
         addIngredient={addIngredient}
          removeIngredient={removeIngredient}/>
-         
+         <Modal>Hello</Modal>
     </div>
      );
 }
