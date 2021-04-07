@@ -10,16 +10,18 @@ const SaladBuilder = () => {
         lettuce: 4,
         spinach: .5,
       };
+
     const [ingredients, setIngredients ]= useState({});
+    const [price, setPrice] = useState(0);
 
-    const [price, setPrice] = useState(10);
-
-    useEffect(() => {
-        axios.get (`https://builder-e08b0-default-rtdb.firebaseio.com/ingredients.json`)
-            .then((response) => {
-            setIngredients({ ...response.data });
-          }); 
-      });
+    useEffect(
+      () => axios
+        .get ('https://builder-e08b0-default-rtdb.firebaseio.com/default.json')
+        .then(response => {
+            setPrice(response.data.price);
+            setIngredients(response.data.ingredients);
+          }),[]
+      );
 
 
 
