@@ -1,3 +1,4 @@
+import Button from "../../UI/Button/Button";
 import SaladControl from "./SaladControl/SaladControl";
 import classes from "./SaladControls.module.css";
 
@@ -17,7 +18,7 @@ const SaladControls = ({ingredients, addIngredient, removeIngredient}) => {
     <div className={classes.SaladControls}>
         <strong>Ingredients</strong>
         {results}
-        <button disabled={!total}>Order</button>
+        <Button disabled={!total}>Order</Button>
     </div> );
 }
  
