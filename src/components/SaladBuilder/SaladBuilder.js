@@ -14,6 +14,7 @@ const SaladBuilder = () => {
 
     const [ingredients, setIngredients ]= useState({});
     const [price, setPrice] = useState(0);
+    const [ordering, setOrdering] = useState(false);
 
     useEffect(
       () => axios
@@ -43,12 +44,22 @@ const SaladBuilder = () => {
         }
     }
 
+    function startOrdering() {
+      setOrdering(true);
+    }
+  
+    function stopOrdering() {
+      setOrdering(false);
+    }
+
     return ( <div className={classes.SaladBuilder}>
         <SaladPreview price={price} ingredients={ingredients}/>
         <SaladControls ingredients={ingredients}
         addIngredient={addIngredient}
-         removeIngredient={removeIngredient}/>
-         <Modal>Hello</Modal>
+         removeIngredient={removeIngredient}
+         startOrdering={startOrdering}/>
+         <Modal   show={ordering}
+        cancel={stopOrdering}>Hello</Modal>
     </div>
      );
 }
