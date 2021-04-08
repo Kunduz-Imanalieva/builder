@@ -18,6 +18,7 @@ const SaladControls = ({
         addIngredient={addIngredient}
         removeIngredient={removeIngredient}
         type={ingredient}
+        count={ingredients[ingredient]}
       />
     );
   }
