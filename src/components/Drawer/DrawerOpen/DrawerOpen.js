@@ -8,6 +8,6 @@ const DrawerOpen = ({ click }) => {
       <div></div>
     </div>
   );
-}
+};
 
 export default DrawerOpen;

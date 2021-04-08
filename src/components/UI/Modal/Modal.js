@@ -7,12 +7,12 @@ const Modal = ({ show, children, cancel }) => {
   };
   return (
     <div className={classes.Modal}>
-      <Backdrop show={show} click={cancel}/>
+      <Backdrop show={show} click={cancel} />
       <div className={classes.content} style={style}>
         {children}
       </div>
     </div>
   );
-}
+};
 
 export default Modal;

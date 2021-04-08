@@ -6,62 +6,65 @@ import SaladPreview from "./SaladPreview/SaladPreview";
 import Modal from "../UI/Modal/Modal";
 
 const SaladBuilder = () => {
-    const prices = {
-        cuccumber: 5,
-        lettuce: 4,
-        spinach: .5,
-      };
+  const prices = {
+    cucumber: 5,
+    lettuce: 4,
+    spinach: 0.5,
+  };
 
-    const [ingredients, setIngredients ]= useState({});
-    const [price, setPrice] = useState(0);
-    const [ordering, setOrdering] = useState(false);
+  const [ingredients, setIngredients] = useState({});
+  const [price, setPrice] = useState(0);
+  const [ordering, setOrdering] = useState(false);
 
-    useEffect(
-      () => axios
-        .get ('https://builder-e08b0-default-rtdb.firebaseio.com/default.json')
-        .then(response => {
-            setPrice(response.data.price);
-            setIngredients(response.data.ingredients);
-          }),[]
-      );
+  useEffect(
+    () =>
+      axios
+        .get("https://builder-e08b0-default-rtdb.firebaseio.com/default.json")
+        .then((response) => {
+          setPrice(response.data.price);
+          setIngredients(response.data.ingredients);
+        }),
+    []
+  );
 
+  function addIngredient(type) {
+    const newIngredients = { ...ingredients };
+    newIngredients[type]++;
+    setPrice(price + prices[type]);
+    setIngredients(newIngredients);
+  }
 
-
-    function addIngredient(type) {
-        const newIngredients = { ...ingredients};
-        newIngredients[type]++;
-        setPrice(price + prices[type]);
-        setIngredients(newIngredients)
+  function removeIngredient(type) {
+    if (ingredients[type]) {
+      const newIngredients = { ...ingredients };
+      newIngredients[type]--;
+      setPrice(price - prices[type]);
+      setIngredients(newIngredients);
     }
+  }
 
+  function startOrdering() {
+    setOrdering(true);
+  }
 
-    function removeIngredient(type) {
-        if (ingredients[type]) {
-        const newIngredients = { ...ingredients};
-        newIngredients[type]--;
-        setPrice(price - prices[type]);
-        setIngredients(newIngredients)
-        }
-    }
+  function stopOrdering() {
+    setOrdering(false);
+  }
 
-    function startOrdering() {
-      setOrdering(true);
-    }
-  
-    function stopOrdering() {
-      setOrdering(false);
-    }
-
-    return ( <div className={classes.SaladBuilder}>
-        <SaladPreview price={price} ingredients={ingredients}/>
-        <SaladControls ingredients={ingredients}
+  return (
+    <div className={classes.SaladBuilder}>
+      <SaladPreview price={price} ingredients={ingredients} />
+      <SaladControls
+        ingredients={ingredients}
         addIngredient={addIngredient}
-         removeIngredient={removeIngredient}
-         startOrdering={startOrdering}/>
-         <Modal   show={ordering}
-        cancel={stopOrdering}>Hello</Modal>
+        removeIngredient={removeIngredient}
+        startOrdering={startOrdering}
+      />
+      <Modal show={ordering} cancel={stopOrdering}>
+        Hello
+      </Modal>
     </div>
-     );
-}
- 
+  );
+};
+
 export default SaladBuilder;

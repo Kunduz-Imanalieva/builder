@@ -13,6 +13,6 @@ const Toolbar = ({ openDrawer }) => {
       <DrawerOpen click={openDrawer} />
     </div>
   );
-}
- 
+};
+
 export default Toolbar;
