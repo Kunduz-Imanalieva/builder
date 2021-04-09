@@ -5,6 +5,7 @@ import SaladControls from "./SaladControls/SaladControls";
 import SaladPreview from "./SaladPreview/SaladPreview";
 import Modal from "../UI/Modal/Modal";
 import OrderSummary from "./OrderSummary/OrderSummary";
+import Button from "../UI/Button/Button";
 
 const SaladBuilder = () => {
   const prices = {
@@ -52,6 +53,10 @@ const SaladBuilder = () => {
     setOrdering(false);
   }
 
+  function finishOrdering() {
+    setOrdering(false);
+  }
+
   return (
     <div className={classes.SaladBuilder}>
       <SaladPreview price={price} ingredients={ingredients} />
@@ -62,9 +67,12 @@ const SaladBuilder = () => {
         startOrdering={startOrdering}
       />
       <Modal show={ordering} cancel={stopOrdering}>
-        <OrderSummary 
-          ingredients={ingredients}
-          price={price}/>
+        <OrderSummary ingredients={ingredients} price={price} />
+
+        <Button onClick={finishOrdering} green>
+          Checkout
+        </Button>
+        <Button onClick={stopOrdering}>Cancel</Button>
       </Modal>
     </div>
   );
