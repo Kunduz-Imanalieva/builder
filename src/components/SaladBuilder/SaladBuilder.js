@@ -4,6 +4,7 @@ import classes from "./SaladBuilder.module.css";
 import SaladControls from "./SaladControls/SaladControls";
 import SaladPreview from "./SaladPreview/SaladPreview";
 import Modal from "../UI/Modal/Modal";
+import OrderSummary from "./OrderSummary/OrderSummary";
 
 const SaladBuilder = () => {
   const prices = {
@@ -61,7 +62,9 @@ const SaladBuilder = () => {
         startOrdering={startOrdering}
       />
       <Modal show={ordering} cancel={stopOrdering}>
-        Hello
+        <OrderSummary 
+          ingredients={ingredients}
+          price={price}/>
       </Modal>
     </div>
   );
