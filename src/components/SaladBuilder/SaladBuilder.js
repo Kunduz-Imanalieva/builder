@@ -18,16 +18,16 @@ const SaladBuilder = () => {
   const [price, setPrice] = useState(0);
   const [ordering, setOrdering] = useState(false);
 
-  useEffect(
-    () =>
-      axios
-        .get("https://builder-e08b0-default-rtdb.firebaseio.com/default.json")
-        .then((response) => {
-          setPrice(response.data.price);
-          setIngredients(response.data.ingredients);
-        }),
-    []
-  );
+  useEffect(loadDefaults, []);
+
+  function loadDefaults() {
+    axios
+      .get('https://builder-e08b0-default-rtdb.firebaseio.com/default.json')
+      .then(response => {
+        setPrice(response.data.price);
+        setIngredients(response.data.ingredients);
+      });
+  }
 
   function addIngredient(type) {
     const newIngredients = { ...ingredients };
@@ -54,7 +54,18 @@ const SaladBuilder = () => {
   }
 
   function finishOrdering() {
-    setOrdering(false);
+    axios
+      .post('https://builder-e08b0-default-rtdb.firebaseio.com/orders.json', {
+        ingredients: ingredients,
+        price: price,
+        address: "1234 Jusaeva str",
+        phone: "0 777 777 777",
+        name: "Sadyr Japarov",
+      })
+      .then(() => {
+        setOrdering(false);
+        loadDefaults();
+      });
   }
 
   return (
