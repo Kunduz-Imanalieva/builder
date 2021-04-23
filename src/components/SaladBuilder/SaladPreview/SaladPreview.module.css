@@ -1,20 +1,21 @@
 .SaladPreview {
-    flex: 0 0 400px;
+    flex: 0 0 500px;
     height: 400px;
     margin-right: 1rem;
     margin-bottom: 1rem;
     border-radius: 100%;
-    background-color: #caff9b;
     flex-wrap: wrap;
     display: flex;
     justify-content: center;
     align-items: center;
   }
   .ingredients {
-    width: 380px;
-    height: 380px;
+    width: 400px;
+    height: 400px;
     border-radius: 100%;
     position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
   .price {
