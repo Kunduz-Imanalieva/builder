@@ -11,7 +11,9 @@ const SaladBuilder = () => {
   const prices = {
     cucumber: 5,
     lettuce: 4,
-    spinach: 0.5,
+    onion: 2,
+    tomato:2,
+    broccoli: 3,
   };
 
   const [ingredients, setIngredients] = useState({});
