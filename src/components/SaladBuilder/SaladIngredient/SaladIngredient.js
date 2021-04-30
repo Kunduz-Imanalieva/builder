@@ -1,25 +1,42 @@
 import React from "react";
 import classes from "./SaladIngredient.module.css";
-import cucumberBackground from "../../../images/cucumber.svg";
-import lettuceBackground from "../../../images/lettuce.svg";
-import spinachBackground from "../../../images/spinach.svg";
+import cucumberBackground from "../../../images/cucumber.png";
+import lettuceBackground from "../../../images/lettuce.png";
+import onionBackground from "../../../images/onion.png";
+import tomatoBackground from "../../../images/tomato.png";
+import broccoliBackground from "../../../images/broccoli.png";
 
 const SaladIngredient = ({ type, fixed }) => {
   const types = {
     cucumber: {
       backgroundImage: `url(${cucumberBackground})`,
-      width: "35px",
-      height: "35px",
+      width: "50px",
+      height: "50px",
+      backgroundSize: "cover" ,
     },
     lettuce: {
       backgroundImage: `url(${lettuceBackground})`,
-      width: "35px",
-      height: "35px",
+      width: "50px",
+      height: "50px",
+      backgroundSize: "cover" ,
     },
-    spinach: {
-      backgroundImage: `url(${spinachBackground})`,
-      width: "35px",
-      height: "35px",
+    onion: {
+      backgroundImage: `url(${onionBackground})`,
+      width: "60px",
+      height: "60px",
+      backgroundSize: "cover" ,
+    },
+    tomato: {
+      backgroundImage: `url(${tomatoBackground})`,
+      width: "40px",
+      height: "40px",
+      backgroundSize: "cover" ,
+    },
+    broccoli: {
+      backgroundImage: `url(${broccoliBackground})`,
+      width: "60px",
+      height: "40px",
+      backgroundSize: "cover" ,
     },
   };
 
