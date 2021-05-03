@@ -7,7 +7,7 @@ import Modal from "../UI/Modal/Modal";
 import OrderSummary from "./OrderSummary/OrderSummary";
 import Button from "../UI/Button/Button";
 
-const SaladBuilder = () => {
+const SaladBuilder = ({ history }) => {
   const prices = {
     cucumber: 5,
     lettuce: 4,
@@ -67,6 +67,7 @@ const SaladBuilder = () => {
       .then(() => {
         setOrdering(false);
         loadDefaults();
+        history.push('/checkout');
       });
   }
 
