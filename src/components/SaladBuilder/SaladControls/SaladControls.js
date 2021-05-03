@@ -4,8 +4,6 @@ import classes from "./SaladControls.module.css";
 
 const SaladControls = ({
   ingredients,
-  addIngredient,
-  removeIngredient,
   startOrdering,
 }) => {
   const results = [];
@@ -15,8 +13,6 @@ const SaladControls = ({
     results.push(
       <SaladControl
         key={ingredient}
-        addIngredient={addIngredient}
-        removeIngredient={removeIngredient}
         type={ingredient}
         count={ingredients[ingredient]}
       />
