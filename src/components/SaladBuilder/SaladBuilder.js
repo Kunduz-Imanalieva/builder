@@ -9,13 +9,7 @@ import Button from "../UI/Button/Button";
 import { useSelector } from "react-redux";
 
 const SaladBuilder = ({ history }) => {
-  const prices = {
-    cucumber: 5,
-    lettuce: 4,
-    onion: 2,
-    tomato:2,
-    broccoli: 3,
-  };
+ 
 
   const ingredients = useSelector(state => state.ingredients);
   const price = useSelector(state => state.price);
