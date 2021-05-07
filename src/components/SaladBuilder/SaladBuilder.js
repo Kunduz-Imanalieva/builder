@@ -6,16 +6,17 @@ import SaladPreview from "./SaladPreview/SaladPreview";
 import Modal from "../UI/Modal/Modal";
 import OrderSummary from "./OrderSummary/OrderSummary";
 import Button from "../UI/Button/Button";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { load } from "../../store/actions/builder";
 
 const SaladBuilder = ({ history }) => {
  
-
+  const dispatch = useDispatch();
   const ingredients = useSelector(state => state.ingredients);
   const price = useSelector(state => state.price);
   const [ordering, setOrdering] = useState(false);
 
-  // useEffect(loadDefaults, []);
+  useEffect(() => dispatch(load()), []);
 
   // function loadDefaults() {
   //   axios

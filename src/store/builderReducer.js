@@ -1,14 +1,8 @@
-import { ADD_INGREDIENT, REMOVE_INGREDIENT } from "./actions/types";
+import { ADD_INGREDIENT, REMOVE_INGREDIENT, SET_INGREDIENTS } from "./actions/types";
 
 const initialState = {
-  ingredients: {
-    tomato: 5,
-    lettuce: 5,
-    broccoli: 5,
-    onion: 5,
-    cucumber: 5,
-  },
-  price: 200,
+  ingredients: {},
+  price: 0,
 };
 
 const prices = {
@@ -30,6 +24,10 @@ const builderReducer = (state = initialState, action) => {
     case REMOVE_INGREDIENT:
       newState.ingredients[action.ingredient]--;
       newState.price -= prices[action.ingredient];
+      break;
+    case SET_INGREDIENTS:
+      newState.ingredients = action.data.ingredients;
+      newState.price = action.data.price;
       break;
 
     default:
