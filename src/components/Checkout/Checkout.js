@@ -5,8 +5,8 @@ import axios from "axios";
 import { useSelector } from "react-redux";
 
 const Checkout = ({ history }) => {
-  const ingredients = useSelector((state) => state.ingredients);
-  const price = useSelector((state) => state.price);
+  const ingredients = useSelector((state) => state.builder.ingredients);
+  const price = useSelector((state) => state.builder.price);
   function cancelCallback() {
     history.replace("/");
   }

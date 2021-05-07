@@ -12,8 +12,8 @@ import { load } from "../../store/actions/builder";
 const SaladBuilder = ({ history }) => {
  
   const dispatch = useDispatch();
-  const ingredients = useSelector(state => state.ingredients);
-  const price = useSelector(state => state.price);
+  const ingredients = useSelector(state => state.builder.ingredients);
+  const price = useSelector(state => state.builder.price);
   const [ordering, setOrdering] = useState(false);
 
   useEffect(() => dispatch(load()), []);
