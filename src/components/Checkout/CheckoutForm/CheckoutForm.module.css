@@ -1,0 +1,25 @@
+.CheckoutForm {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1rem;
+    justify-content: center;
+    text-align: center;
+  }
+  .CheckoutForm > div {
+    flex: 1 1 300%;
+    padding: .1rem .1rem;
+  }
+  .CheckoutForm > div > label::after {
+    content: ":";
+    margin-right: 1rem;
+  }
+  .CheckoutForm > div > input {
+    border-radius: 1rem;
+    border: 1px solid lightgray;
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+  .CheckoutForm > div > input:focus {
+    outline: none;
+    border-color: darkgray;
+  } 
