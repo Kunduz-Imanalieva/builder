@@ -16,18 +16,8 @@ const SaladBuilder = ({ history }) => {
   const price = useSelector(state => state.builder.price);
   const [ordering, setOrdering] = useState(false);
 
-  useEffect(() => dispatch(load()), []);
+  useEffect(() => dispatch(load()), [dispatch]);
 
-  // function loadDefaults() {
-  //   axios
-  //     .get('https://builder-e08b0-default-rtdb.firebaseio.com/default.json')
-  //     .then(response => {
-  //       setPrice(response.data.price);
-  //       setIngredients(response.data.ingredients);
-  //     });
-  // }
-
-  
 
   function startOrdering() {
     setOrdering(true);
@@ -63,7 +53,7 @@ const SaladBuilder = ({ history }) => {
       <Modal show={ordering} cancel={stopOrdering}>
         <OrderSummary ingredients={ingredients} price={price} />
 
-        <Button onClick={finishOrdering} green>
+        <Button onClick={finishOrdering} green="green">
           Checkout
         </Button>
         <Button onClick={stopOrdering}>Cancel</Button>
