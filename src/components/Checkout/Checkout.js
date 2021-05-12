@@ -1,7 +1,7 @@
 import classes from "./Checkout.module.css";
 import SaladPreview from "../SaladBuilder/SaladPreview/SaladPreview";
 import CheckoutForm from "./CheckoutForm/CheckoutForm";
-import axios from "axios";
+import axios from "../../axios";
 import { useSelector } from "react-redux";
 
 const Checkout = ({ history }) => {
@@ -14,7 +14,7 @@ const Checkout = ({ history }) => {
   function submitCallback(event) {
     const data = new FormData(event.target);
     axios
-      .post("https://builder-e08b0-default-rtdb.firebaseio.com/orders.json", {
+      .post("/orders.json", {
         name: data.get("name"),
         address: data.get("address"),
         phone: data.get("phone"),
