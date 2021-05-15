@@ -3,6 +3,7 @@ import SaladPreview from "../SaladBuilder/SaladPreview/SaladPreview";
 import CheckoutForm from "./CheckoutForm/CheckoutForm";
 import axios from "../../axios";
 import { useSelector } from "react-redux";
+import withAxios from "../withAxios";
 
 const Checkout = ({ history }) => {
   const ingredients = useSelector((state) => state.builder.ingredients);
@@ -38,4 +39,4 @@ const Checkout = ({ history }) => {
   );
 };
 
-export default Checkout;
+export default withAxios(Checkout, axios);

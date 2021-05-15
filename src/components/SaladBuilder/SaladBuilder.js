@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "../../axios";
 import { useEffect, useState } from "react";
 import classes from "./SaladBuilder.module.css";
 import SaladControls from "./SaladControls/SaladControls";
@@ -8,6 +8,7 @@ import OrderSummary from "./OrderSummary/OrderSummary";
 import Button from "../UI/Button/Button";
 import { useDispatch, useSelector } from "react-redux";
 import { load } from "../../store/actions/builder";
+import withAxios from "../withAxios";
 
 const SaladBuilder = ({ history }) => {
  
@@ -62,4 +63,4 @@ const SaladBuilder = ({ history }) => {
   );
 };
 
-export default SaladBuilder;
+export default withAxios(SaladBuilder, axios);
