@@ -5,6 +5,8 @@ import lettuceBackground from "../../../images/lettuce.png";
 import onionBackground from "../../../images/onion.png";
 import tomatoBackground from "../../../images/tomato.png";
 import broccoliBackground from "../../../images/broccoli.png";
+import mushroomBackground from "../../../images/mushroom.png";
+import avocadoBackground from "../../../images/avocado.png";
 
 const SaladIngredient = ({ type, fixed }) => {
   const types = {
@@ -16,14 +18,14 @@ const SaladIngredient = ({ type, fixed }) => {
     },
     lettuce: {
       backgroundImage: `url(${lettuceBackground})`,
-      width: "50px",
-      height: "50px",
+      width: "60px",
+      height: "60px",
       backgroundSize: "cover" ,
     },
     onion: {
       backgroundImage: `url(${onionBackground})`,
-      width: "60px",
-      height: "60px",
+      width: "40px",
+      height: "40px",
       backgroundSize: "cover" ,
     },
     tomato: {
@@ -36,6 +38,18 @@ const SaladIngredient = ({ type, fixed }) => {
       backgroundImage: `url(${broccoliBackground})`,
       width: "60px",
       height: "40px",
+      backgroundSize: "cover" ,
+    },
+    mushroom: {
+      backgroundImage: `url(${mushroomBackground})`,
+      width: "60px",
+      height: "40px",
+      backgroundSize: "cover" ,
+    },
+    avocado: {
+      backgroundImage: `url(${avocadoBackground})`,
+      width: "60px",
+      height: "60px",
       backgroundSize: "cover" ,
     },
   };
