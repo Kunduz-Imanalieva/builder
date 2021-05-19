@@ -5,6 +5,7 @@ import Checkout from "./components/Checkout/Checkout";
 import { Redirect, Route, Switch } from "react-router";
 import Orders from "./components/Orders/Orders";
 import Auth from "./components/Auth/Auth";
+import Logout from "./components/Logout/Logout";
 function App() {
   return (
     <div className="App">
@@ -14,6 +15,7 @@ function App() {
           <Route path="/checkout" component={Checkout} />
           <Route path="/orders" component={Orders} />
           <Route path="/auth" component={Auth} />
+          <Route path="/logout" component={Logout} />
           <Redirect to="/" />
         </Switch>
       </Layout>
