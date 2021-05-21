@@ -7,6 +7,8 @@ const OrderSummary = ({ ingredients, price }) => {
     tomato: "Tomatoes",
     onion: "Onions",
     broccoli: "Broccolies",
+    avocado: "Avocadoes",
+    mushroom: "Mushrooms",
   }
   const results = Object.keys(ingredients)
     .map(type => <li key={type}>{labels[type]}: {ingredients[type]}</li>);
