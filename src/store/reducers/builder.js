@@ -6,11 +6,13 @@ const initialState = {
 };
 
 const prices = {
-  cucumber: 5,
+  cucumber: 2,
   lettuce: 4,
-  onion: 2,
+  onion: 1,
   tomato: 2,
   broccoli: 3,
+  avocado: 2,
+  mushroom: 2,
 };
 
 const builder = (state = initialState, action) => {
