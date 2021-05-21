@@ -11,17 +11,20 @@ import { load } from "../../store/actions/builder";
 import withAxios from "../withAxios";
 
 const SaladBuilder = ({ history }) => {
- 
   const dispatch = useDispatch();
-  const ingredients = useSelector(state => state.builder.ingredients);
-  const price = useSelector(state => state.builder.price);
+  const isAuthenticated = useSelector((state) => state.auth.token !== null);
+  const ingredients = useSelector((state) => state.builder.ingredients);
+  const price = useSelector((state) => state.builder.price);
   const [ordering, setOrdering] = useState(false);
 
   useEffect(() => dispatch(load()), [dispatch]);
 
-
   function startOrdering() {
-    setOrdering(true);
+    if (isAuthenticated) {
+      setOrdering(true);
+    } else {
+      history.push("/auth");
+    }
   }
 
   function stopOrdering() {
@@ -30,7 +33,7 @@ const SaladBuilder = ({ history }) => {
 
   function finishOrdering() {
     axios
-      .post('https://builder-e08b0-default-rtdb.firebaseio.com/orders.json', {
+      .post("https://builder-e08b0-default-rtdb.firebaseio.com/orders.json", {
         ingredients: ingredients,
         price: price,
         address: "1234 Jusaeva str",
@@ -40,17 +43,14 @@ const SaladBuilder = ({ history }) => {
       .then(() => {
         setOrdering(false);
         // loadDefaults();
-        history.push('/checkout');
+        history.push("/checkout");
       });
   }
 
   return (
     <div className={classes.SaladBuilder}>
       <SaladPreview price={price} ingredients={ingredients} />
-      <SaladControls
-        ingredients={ingredients}
-        startOrdering={startOrdering}
-      />
+      <SaladControls ingredients={ingredients} startOrdering={startOrdering} />
       <Modal show={ordering} cancel={stopOrdering}>
         <OrderSummary ingredients={ingredients} price={price} />
 
