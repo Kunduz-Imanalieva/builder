@@ -3,4 +3,9 @@
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 1rem;
+    background-image: url(../../images/background-image.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 583px;
+    margin-top: 0px;
 }
