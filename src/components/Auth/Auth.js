@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import axios from "../../axios";
 import { start, auth } from "../../store/actions/auth";
 import withAxios from "../withAxios";
@@ -9,7 +9,6 @@ import { Redirect, useLocation } from "react-router-dom";
 
 export default withAxios(() => {
   const dispatch = useDispatch();
-  const [method, setMethod] = useState("signin");
   const { loading, error, token } = useSelector((state) => state.auth);
   const location = useLocation();
 
@@ -17,6 +16,8 @@ export default withAxios(() => {
     start(dispatch);
 
     const data = new FormData(event.target);
+    const method =
+      event.nativeEvent.submitter.innerText == "Sign in" ? "signin" : "signup";
     auth(dispatch, method, data.get("email"), data.get("password"));
 
     event.preventDefault();
@@ -36,12 +37,8 @@ export default withAxios(() => {
           minLength="6"
         />
         <div className={classes.AuthBtns}>
-          <Button click={() => setMethod("signin")} green>
-            Sign in
-          </Button>
-          <Button click={() => setMethod("signup")} red>
-            Sign up
-          </Button>
+          <Button>Sign in</Button>
+          <Button>Sign up</Button>
         </div>
       </form>
     );
