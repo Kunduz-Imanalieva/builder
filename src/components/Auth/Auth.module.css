@@ -1,0 +1,15 @@
+.Auth form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px;
+  }
+  .Auth h1{
+    margin-bottom: 20px;
+  }
+  .Auth input{
+    margin: 8px 0px;
+    border: 2px solid #213F36;
+    border-radius: 7px;
+    padding: 10px;
+  }
