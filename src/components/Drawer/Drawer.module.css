@@ -1,27 +1,50 @@
 .Drawer .content {
-    width: 250px;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    font-size: 2rem;
-    color: white;
-    background-color: #caff9b;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
-    transition: transform .3s ease-out;
-  }
-  
-  .open {
-    transform: translateX(0);
-  }
-  .close {
-    transform: translateX(-260px);
-  }
+  width: 250px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  font-size: 2rem;
+  color: black;
+  background-color: rgb(250, 249, 245);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease-out;
+}
+.Drawer img {
+  display: none;
+}
+.Drawer div {
+  padding-top: 5px;
+  padding-left: 5px;
+  font-size: 25px;
+}
+.Drawer ul {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0px;
+}
+.Drawer a {
+  border-bottom: none;
+  border-right: 5px solid transparent;
+}
+.Drawer a:hover {
+  border-color: black;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.Drawer a:active,
+.Drawer a.active {
+  border-color: black;
+}
+.open {
+  transform: translateX(0);
+}
+.close {
+  transform: translateX(-260px);
+}
 
-  @media (min-width: 550px) {
-    .Drawer  {
-      display: none;
-    }
+@media (min-width: 690px) {
+  .Drawer {
+    display: none;
   }
-
+}

@@ -1,29 +1,19 @@
 .SaladControl {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
 .SaladControl .ingredient div {
-    position: static;
-    margin: 0 .5rem;
-  }
+  position: static;
+  margin: 0 0.5rem;
+}
 
 .SaladControl button {
-    width: 2rem;
-    height: 2rem;
-    border-radius: 100%;
-    border: none;
-    font-weight: bold;
-    font-size: 1.5rem;
-}
-
-.SaladControl button:hover {
-    color: white;
-    cursor: pointer;
-}
-
-.SaladControl button:focus {
-    outline: none;
+  width: 30px;
+  height: 40px;
+  padding: 0px;
+  border-radius: 100%;
+  font-weight: bold;
 }
