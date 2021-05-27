@@ -34,7 +34,7 @@ const Checkout = ({ history }) => {
   return (
     <div className={classes.Checkout}>
       <SaladPreview ingredients={ingredients} price={price} />
-      <CheckoutForm
+      <CheckoutForm className={classes.form}
         cancelCallback={cancelCallback}
         submitCallback={submitCallback}
       />

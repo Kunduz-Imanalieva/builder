@@ -6,7 +6,7 @@
     text-align: center;
   }
   .CheckoutForm > div {
-    flex: 1 1 300%;
+    flex: 0 0 100%;
     padding: .1rem .1rem;
   }
   .CheckoutForm > div > label::after {
@@ -23,3 +23,7 @@
     outline: none;
     border-color: darkgray;
   } 
+  .CheckoutForm button {
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }

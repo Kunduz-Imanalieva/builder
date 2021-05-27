@@ -1,4 +1,10 @@
 .Checkout {
-    width: 420px;
-    margin: 0 auto;
-  } 
+  width: 500px;
+  height: 450px;
+  margin: 0 auto;
+}
+
+.Checkout form {
+  margin-top: 40px;
+  margin-right: 40px;
+}
