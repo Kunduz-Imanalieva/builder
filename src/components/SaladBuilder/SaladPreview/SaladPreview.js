@@ -1,7 +1,6 @@
 import SaladIngredient from "../SaladIngredient/SaladIngredient";
 import classes from "./SaladPreview.module.css";
 
-
 const SaladPreview = ({ ingredients, price }) => {
   const result = [];
 
@@ -13,8 +12,7 @@ const SaladPreview = ({ ingredients, price }) => {
   return (
     <div className={classes.SaladPreview}>
       <div className={classes.salad}>
-        <div className={classes.ingredients}>
-          {result}</div>
+        <div className={classes.ingredients}>{result}</div>
       </div>
       <div className={classes.price}>{price.toFixed(1)} som</div>
     </div>

@@ -1,32 +1,43 @@
 .SaladPreview {
-    flex: 0 0 500px;
-    height: 500px;
-    
-    border-radius: 100%;
-    flex-wrap: wrap;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 15px;
-    background-image: url(../../../images/plate.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    box-shadow: 20px 30px 40px rgba(0, 0, 0, 0.25);
-    margin-right: 40px;
-  }
-  .ingredients {
-    width: 400px;
-    height: 290px;
-    border-radius: 100%;
-    position: relative;
-  }
+  flex: 0 0 450px;
+  height: 450px;
+  border-radius: 100%;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  background-image: url(../../../images/plate.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 20px 30px 40px rgba(0, 0, 0, 0.25);
+  margin-right: 40px;
+}
 
-  .price {
-    background-color: #213F36;
-    border-radius: 1rem;
-    padding: 0 1rem;
-    font-size: 1.5rem;
-    color: white;
-    font-weight: bold;
-  }
-  
+.ingredients {
+  width: 360px;
+  height: 340px;
+  border-radius: 100%;
+  position: relative;
+}
+
+.salad {
+  width: 400px;
+  width: 400px;
+  height: 400px;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.price {
+  background-color: #213f36;
+  border-radius: 1rem;
+  padding: 0 1rem;
+  font-size: 1.5rem;
+  color: white;
+  font-weight: bold;
+}
