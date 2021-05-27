@@ -7,8 +7,8 @@ import withAxios from "../withAxios";
 
 const Checkout = ({ history }) => {
   const { token, id } = useSelector(state => state.auth);
-  const ingredients = useSelector(state => state.builder.ingredients);
-  const price = useSelector(state => state.builder.price);
+  const ingredients = useSelector((state) => state.builder.ingredients);
+  const price = useSelector((state) => state.builder.price);
 
   function cancelCallback() {
     history.replace("/");

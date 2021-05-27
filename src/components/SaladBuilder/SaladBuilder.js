@@ -32,19 +32,7 @@ const SaladBuilder = ({ history }) => {
   }
 
   function finishOrdering() {
-    axios
-      .post("https://builder-e08b0-default-rtdb.firebaseio.com/orders.json", {
-        ingredients: ingredients,
-        price: price,
-        address: "1234 Jusaeva str",
-        phone: "0 777 777 777",
-        name: "Sadyr Japarov",
-      })
-      .then(() => {
-        setOrdering(false);
-        // loadDefaults();
-        history.push("/checkout");
-      });
+    history.push("/checkout");
   }
 
   return (
